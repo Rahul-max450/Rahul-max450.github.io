@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Doctreee! 🩺✨</title>
+    <title>Happy Birthday Rakshita! ✨🎈</title>
     <style>
         :root {
-            --bg-dark: #050b0a;
-            --emerald-glow: #00ffaa;
-            --ayurveda-green: #0b6646;
-            --gold-accent: #d4af37;
+            --bg-dark: #0a0a0c;
+            --neon-pink: #ff007f;
+            --premium-gold: #d4af37;
+            --electric-blue: #00f0ff;
             --text-light: #e2e8f0;
-            --card-rgba: rgba(11, 38, 32, 0.5);
+            --card-rgba: rgba(20, 20, 25, 0.6);
         }
 
         * {
@@ -32,27 +32,25 @@
             perspective: 1000px;
         }
 
-        /* Tech-Grid Medical Background Layer */
-        .heartbeat-grid {
+        /* Luxury Ambient Glow Layers */
+        .stars-grid {
             position: fixed;
             top: 0; left: 0; width: 100vw; height: 100vh;
-            background: linear-gradient(rgba(0, 255, 170, 0.02) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(0, 255, 170, 0.02) 1px, transparent 1px);
-            background-size: 50px 50px;
+            background: radial-gradient(circle, rgba(255, 0, 127, 0.03) 0%, transparent 80%);
             z-index: 0;
             pointer-events: none;
         }
 
-        .bio-glow {
+        .ambient-glow {
             position: fixed;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(0, 255, 170, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(0, 240, 255, 0.06) 0%, transparent 70%);
             top: 50%; left: 50%;
             transform: translate(-50%, -50%);
             z-index: 0;
             pointer-events: none;
-            filter: blur(50px);
+            filter: blur(60px);
         }
 
         .container {
@@ -63,17 +61,17 @@
             text-align: center;
         }
 
-        /* PREMIUM SCREEN 1: Terminal Gatekeeper */
+        /* SCREEN 1: Interactive System Unlock */
         #loader-screen {
             text-align: left;
-            max-width: 550px;
+            max-width: 500px;
             width: 100%;
             margin: 0 auto;
-            background: rgba(4, 12, 10, 0.9);
+            background: rgba(15, 15, 20, 0.9);
             padding: 35px;
-            border: 1px solid var(--emerald-glow);
+            border: 1px solid var(--neon-pink);
             border-radius: 16px;
-            box-shadow: 0 0 40px rgba(0, 255, 170, 0.25);
+            box-shadow: 0 0 40px rgba(255, 0, 127, 0.25);
             backdrop-filter: blur(15px);
             font-family: 'Courier New', Courier, monospace;
             transition: all 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
@@ -84,12 +82,12 @@
             font-size: 0.95rem;
             color: #a0aec0;
         }
-        .status-line span { color: var(--emerald-glow); }
+        .status-line span { color: var(--electric-blue); }
 
         .pulse-btn {
-            background: linear-gradient(135deg, transparent, rgba(0, 255, 170, 0.1));
-            border: 2px solid var(--gold-accent);
-            color: var(--gold-accent);
+            background: linear-gradient(135deg, transparent, rgba(255, 0, 127, 0.1));
+            border: 2px solid var(--premium-gold);
+            color: var(--premium-gold);
             padding: 16px 30px;
             font-size: 1.1rem;
             font-weight: bold;
@@ -103,13 +101,13 @@
             box-shadow: 0 0 15px rgba(214, 175, 55, 0.2);
         }
         .pulse-btn:hover {
-            background: var(--gold-accent);
+            background: var(--premium-gold);
             color: var(--bg-dark);
-            box-shadow: 0 0 25px var(--gold-accent);
+            box-shadow: 0 0 25px var(--premium-gold);
             transform: scale(1.02);
         }
 
-        /* PREMIUM SCREEN 2: Main Immersive Presentation */
+        /* SCREEN 2: Main Celebration Display */
         #main-ui {
             display: none;
             opacity: 0;
@@ -127,7 +125,7 @@
             border-radius: 30px;
             font-size: 0.85rem;
             font-weight: 600;
-            color: var(--gold-accent);
+            color: var(--premium-gold);
             letter-spacing: 4px;
             text-transform: uppercase;
             background: rgba(214, 175, 55, 0.07);
@@ -143,35 +141,11 @@
             line-height: 1.1;
         }
         h1.main-title span {
-            color: var(--emerald-glow);
-            text-shadow: 0 0 25px rgba(0, 255, 170, 0.5);
+            color: var(--neon-pink);
+            text-shadow: 0 0 25px rgba(255, 0, 127, 0.5);
         }
 
-        .aliyas {
-            color: var(--gold-accent);
-            font-style: italic;
-            font-size: 1.8rem;
-            margin-top: 8px;
-            font-family: 'Georgia', serif;
-        }
-
-        /* Animated Interactive Medical ECG Line */
-        .ecg-container {
-            width: 240px;
-            height: 50px;
-            margin: 20px auto;
-            stroke: var(--emerald-glow);
-            stroke-width: 2.5;
-            fill: none;
-        }
-        .ecg-path {
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
-            animation: draw-ecg 5s linear infinite;
-        }
-        @keyframes draw-ecg { to { stroke-dashoffset: 0; } }
-
-        /* Premium Floating Luxury Photo Deck */
+        /* Premium Floating Photo Grid */
         .photo-deck {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -179,7 +153,7 @@
             margin: 50px 0;
         }
 
-        .clinical-frame {
+        .luxury-frame {
             position: relative;
             background: var(--card-rgba);
             border: 1px solid rgba(255,255,255,0.06);
@@ -192,7 +166,7 @@
             aspect-ratio: 3/4;
         }
 
-        .clinical-frame img {
+        .luxury-frame img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -200,28 +174,28 @@
             transition: all 0.5s ease;
         }
 
-        .clinical-frame::before {
-            content: '⚕️ DR_RAKSHITA_SPECIMEN_0' var(--id);
+        .luxury-frame::before {
+            content: '✨ MEMORY_CAP_0' var(--id);
             position: absolute;
             bottom: 22px; left: 24px;
             font-family: monospace;
             font-size: 0.7rem;
-            color: var(--emerald-glow);
-            text-shadow: 0 0 5px var(--emerald-glow);
+            color: var(--electric-blue);
+            text-shadow: 0 0 5px var(--electric-blue);
             z-index: 5;
         }
 
-        .clinical-frame:hover {
+        .luxury-frame:hover {
             transform: scale(1.1) rotate(0deg) translateY(-15px);
-            border-color: var(--emerald-glow);
-            box-shadow: 0 30px 60px rgba(0, 255, 170, 0.25);
+            border-color: var(--neon-pink);
+            box-shadow: 0 30px 60px rgba(255, 0, 127, 0.25);
             z-index: 10;
         }
 
-        /* Prescription Premium Letter Box */
-        .prescription-card {
-            background: linear-gradient(135deg, rgba(11, 38, 32, 0.7), rgba(4, 12, 10, 0.95));
-            border: 1px solid rgba(0, 255, 170, 0.2);
+        /* Best Friend Premium Letter Box */
+        .message-card {
+            background: linear-gradient(135deg, rgba(20, 20, 25, 0.8), rgba(10, 10, 12, 0.95));
+            border: 1px solid rgba(255, 0, 127, 0.2);
             border-radius: 28px;
             padding: 45px;
             text-align: left;
@@ -229,19 +203,9 @@
             box-shadow: 0 25px 60px rgba(0,0,0,0.7);
         }
 
-        .prescription-card::before {
-            content: 'Rx';
-            position: absolute;
-            top: 25px; left: 35px;
-            font-size: 4.5rem;
-            font-family: 'Times New Roman', serif;
-            color: rgba(0, 255, 170, 0.08);
-            font-weight: bold;
-        }
-
         .rx-title {
             font-family: monospace;
-            color: var(--gold-accent);
+            color: var(--premium-gold);
             font-size: 0.85rem;
             letter-spacing: 3px;
             text-transform: uppercase;
@@ -250,14 +214,15 @@
             padding-bottom: 12px;
         }
 
-        .typed-prescription {
+        .typed-message {
             font-size: 1.15rem;
             line-height: 1.9;
             color: #cbd5e1;
             white-space: pre-line;
+            min-height: 150px;
         }
 
-        /* Premium Floating Balloon and Leaves Particles Animation */
+        /* Floating Balloon and Sparkle Physics Elements */
         .particle {
             position: fixed;
             pointer-events: none;
@@ -278,12 +243,12 @@
             50% { transform: translateY(-8px); }
         }
 
-        /* Audio Music Bar UI Widget */
+        /* Music Bar Control Widget */
         .music-bar {
             position: fixed;
             bottom: 20px; right: 20px;
-            background: rgba(11, 38, 32, 0.8);
-            border: 1px solid var(--emerald-glow);
+            background: rgba(20, 20, 25, 0.8);
+            border: 1px solid var(--neon-pink);
             padding: 10px 18px;
             border-radius: 30px;
             display: flex;
@@ -292,7 +257,7 @@
             font-size: 0.8rem;
             letter-spacing: 1px;
             text-transform: uppercase;
-            box-shadow: 0 10px 25px rgba(0,255,170,0.15);
+            box-shadow: 0 10px 25px rgba(255,0,127,0.15);
             z-index: 1000;
             display: none;
         }
@@ -301,7 +266,7 @@
             display: flex; gap: 3px; align-items: flex-end; height: 14px;
         }
         .sound-wave span {
-            width: 2px; height: 100%; background: var(--emerald-glow);
+            width: 2px; height: 100%; background: var(--neon-pink);
             animation: jump 0.8s ease-in-out infinite alternate;
         }
         .sound-wave span:nth-child(2) { animation-delay: 0.2s; }
@@ -310,90 +275,74 @@
 
         @media (max-width: 600px) {
             h1.main-title { font-size: 2.5rem; }
-            .prescription-card { padding: 25px; }
-            .clinical-frame { transform: rotate(0deg) !important; }
+            .message-card { padding: 25px; }
+            .luxury-frame { transform: rotate(0deg) !important; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Hidden Native Audio Node (Premium loop stream background track) -->
     <audio id="bday-track" loop>
-        <source src="https://assets.mixkit.co/music/preview/mixkit-happy-birthday-jazz-band-2538.mp3" type="audio/mp3">
+        <source src="bg-music.mp3" type="audio/mp3">
     </audio>
 
-    <div class="heartbeat-grid"></div>
-    <div class="bio-glow"></div>
+    <div class="stars-grid"></div>
+    <div class="ambient-glow"></div>
 
     <div class="container">
         
-        <!-- STEP 1: DECRYPTION ACCELERATOR -->
         <div id="loader-screen">
-            <div class="status-line">&gt; CONFIGURING SOFTWARE_CREATIVITY.SYS...</div>
-            <div class="status-line">&gt; SCANNING COMPONENT DATA: <span>RAKSHITA</span></div>
-            <div class="status-line">&gt; MEDICAL SPECIALIZATION: <span>BAMS (Ayurveda Doctor)</span></div>
-            <div class="status-line">&gt; DEPLOYING CODE ALIAS: <span style="color:var(--gold-accent);">"Doctreee"</span></div>
-            <div class="status-line">&gt; STABILIZING HQ AUDIO COMPILER... <span>READY</span></div>
+            <div class="status-line">&gt; INTERFACE_CREATIVITY.SH... [RUNNING]</div>
+            <div class="status-line">&gt; CONFIGURING DESIGN ASSETS FOR: <span>RAKSHITA</span></div>
+            <div class="status-line">&gt; CORE RELATIONSHIP STATUS: <span>BEST FRIEND</span></div>
+            <div class="status-line">&gt; COMPILING PREMIUM AUDIO GRAPHICS... <span>READY</span></div>
             
-            <button class="pulse-btn" onclick="engageGrandReveal()">Inject Birthday Core</button>
+            <button class="pulse-btn" onclick="engageGrandReveal()">Open Surprise</button>
         </div>
 
-        <!-- STEP 2: THE AMAZING VISUAL REVEAL -->
         <div id="main-ui">
             <div class="header-panel">
-                <div class="title-badge">✨ Premium Birthday Matrix ⚕️</div>
+                <div class="title-badge">✨ Made Especially For You ✨</div>
                 <h1 class="main-title">Happy Birthday, <span>Rakshita!</span></h1>
-                <div class="aliyas">~ Dr. Doctreee 🩺🌿</div>
             </div>
 
-            <!-- ECG Live Line Graph -->
-            <svg class="ecg-container" viewBox="0 0 100 30">
-                <path class="ecg-path" d="M0,15 L30,15 L35,4 L40,26 L45,11 L48,18 L52,15 L100,15" />
-            </svg>
-
-            <!-- Interactive Premium Image Showcase Grid -->
             <div class="photo-deck">
-                <div class="clinical-frame" style="--r: -4deg; --id: 1;">
-                    <img src="pic1.jpg" alt="Rakshita 1" onerror="this.style.display='none'; this.parentElement.innerHTML='📸 Specimen 01'">
+                <div class="luxury-frame" style="--r: -4deg; --id: 1;">
+                    <img src="pic1.jpg" alt="Rakshita 1" onerror="this.style.display='none'; this.parentElement.innerHTML='📸 Memory 01'">
                 </div>
-                <div class="clinical-frame" style="--r: 2deg; --id: 2;">
-                    <img src="pic2.jpg" alt="Rakshita 2" onerror="this.style.display='none'; this.parentElement.innerHTML='🌿 Specimen 02'">
+                <div class="luxury-frame" style="--r: 2deg; --id: 2;">
+                    <img src="pic2.jpg" alt="Rakshita 2" onerror="this.style.display='none'; this.parentElement.innerHTML='✨ Memory 02'">
                 </div>
-                <div class="clinical-frame" style="--r: -2deg; --id: 3;">
-                    <img src="pic3.jpg" alt="Rakshita 3" onerror="this.style.display='none'; this.parentElement.innerHTML='🩺 Specimen 03'">
+                <div class="luxury-frame" style="--r: -2deg; --id: 3;">
+                    <img src="pic3.jpg" alt="Rakshita 3" onerror="this.style.display='none'; this.parentElement.innerHTML='🎈 Memory 03'">
                 </div>
-                <div class="clinical-frame" style="--r: 5deg; --id: 4;">
-                    <img src="pic4.jpg" alt="Rakshita 4" onerror="this.style.display='none'; this.parentElement.innerHTML='✨ Specimen 04'">
+                <div class="luxury-frame" style="--r: 5deg; --id: 4;">
+                    <img src="pic4.jpg" alt="Rakshita 4" onerror="this.style.display='none'; this.parentElement.innerHTML='🎉 Memory 04'">
                 </div>
             </div>
 
-            <!-- Medical Prescription Scroll Case -->
-            <div class="prescription-card">
-                <div class="rx-title">MED-REG NUMBER: BDAY-2026 // DOSAGE: UNLIMITED ENERGY</div>
-                <p class="typed-prescription" id="rx-text"></p>
+            <div class="message-card">
+                <div class="rx-title">CHAPTER 2026 // FROM YOUR BEST FRIEND</div>
+                <p class="typed-message" id="msg-text"></p>
             </div>
         </div>
     </div>
 
-    <!-- Live Status Audio Tracker -->
     <div class="music-bar" id="audio-widget">
         <div class="sound-wave"><span></span><span></span><span></span></div>
-        <div>BGM: Active Audio Stream</div>
+        <div>BGM: Custom Track Active</div>
     </div>
 
     <script>
-        const personalizedPrescription = `Diagnosis: Found to be the absolute most incredible best friend in the universe.
-Prescription: High doses of endless smiles, beautiful memories, and absolute success in your medical journey.
+        const friendshipMessage = `To my absolute favorite human in the entire world, Rakshita,
 
-To our stellar future BAMS Doctor, Rakshita (aka the iconic Doctreee) 🩺🌿,
+Happy Birthday! 🎉🎈
 
-Happy Birthday! 🎉
+From all the endless laughs to sharing the most random, chaotic conversations, you have been the absolute best friend someone could ever ask for. 
 
-While you are mastering the deep sciences of Ayurveda, healing, and life balance—today the cosmos balances everything out just to celebrate *you*. You are going to be a phenomenal doctor, saving lives and making everyone around you infinitely happier.
+I built this little digital space entirely from scratch just to celebrate you. Thank you for always being exactly who you are, keeping my secrets safe, and matching my energy perfectly.
 
-Thank you for always being the most reliable, hilarious, and brilliant friend. This little system architecture was hand-compiled just to tell you how awesome you are.
-
-Administration Route: Eat a giant slice of cake immediately. Have an absolute blast! 🎂🎈✨
+I hope your special day is packed with infinite happiness, lots of tasty cake, and beautiful moments. Here's to surviving another year together and making a million more core memories! ✨🎂
 
 - Your Software Bestie`;
 
@@ -403,11 +352,11 @@ Administration Route: Eat a giant slice of cake immediately. Have an absolute bl
             const audioTrack = document.getElementById('bday-track');
             const audioWidget = document.getElementById('audio-widget');
             
-            // Trigger background audio loop smoothly
-            audioTrack.play().catch(err => console.log("Audio autoplay context handled: ", err));
+            // Instantly plays the uploaded track on touch interaction
+            audioTrack.play().catch(err => console.log("Audio trigger processed: ", err));
             audioWidget.style.display = 'flex';
 
-            // Premium exit animation for loader
+            // Animation out
             loader.style.transform = 'scale(0.8) translateY(-100px)';
             loader.style.opacity = '0';
             
@@ -417,13 +366,13 @@ Administration Route: Eat a giant slice of cake immediately. Have an absolute bl
                 
                 setTimeout(() => {
                     mainContent.style.opacity = '1';
-                    typeWriter(personalizedPrescription, 'rx-text', 28);
+                    typeWriter(friendshipMessage, 'msg-text', 28);
                     launchPremiumDecorations();
                 }, 100);
             }, 800);
         }
 
-        // Fast clean typing matrix
+        // Clean typing core
         let charIndex = 0;
         function typeWriter(text, elementId, speed) {
             if (charIndex < text.length) {
@@ -433,10 +382,10 @@ Administration Route: Eat a giant slice of cake immediately. Have an absolute bl
             }
         }
 
-        // Premium mixed element generator (Balloons + Medical Emojis + Sparkles)
+        // Celebratory Party decoration generator (Balloons, Sparkles, Confetti)
         function launchPremiumDecorations() {
-            const items = ['🎈', '🌿', '✨', '🩺', '🌸', '🎈', '🎉'];
-            const colors = ['#00ffaa', '#d4af37', '#ff4081', '#2196f3', '#e2e8f0'];
+            const items = ['🎈', '✨', '🎉', '🎈', '💖', '⭐'];
+            const colors = ['#ff007f', '#d4af37', '#00f0ff', '#ffffff'];
             
             setInterval(() => {
                 if (document.hidden) return;
@@ -447,15 +396,13 @@ Administration Route: Eat a giant slice of cake immediately. Have an absolute bl
                 const chosen = items[Math.floor(Math.random() * items.length)];
                 element.innerText = chosen;
                 
-                // Random positioning and physics dynamics
                 element.style.left = Math.random() * 95 + 'vw';
                 element.style.fontSize = Math.random() * 2 + 1 + 'rem';
                 element.style.animationDuration = Math.random() * 5 + 4 + 's';
                 element.style.setProperty('--drift', (Math.random() * 200 - 100) + 'px');
                 element.style.setProperty('--rot', (Math.random() * 360) + 'deg');
                 
-                // Colorize text shadows for glowing premium look if it is a sparkle or leaf
-                if (chosen === '✨' || chosen === '🌿') {
+                if (chosen === '✨' || chosen === '⭐') {
                     element.style.textShadow = `0 0 10px ${colors[Math.floor(Math.random() * colors.length)]}`;
                 }
                 
