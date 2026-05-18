@@ -287,9 +287,7 @@
 
 <body>
 
-    <!-- BGM -->
-
-    <audio id="bday-track" loop>
+    <audio id="bday-track" loop prefetch="auto">
         <source src="bg-music.mp3.mpeg" type="audio/mpeg">
     </audio>
 
@@ -298,12 +296,10 @@
 
     <div class="container">
 
-        <!-- LOADER -->
-
         <div id="loader-screen">
 
             <div class="status-line">
-                &gt; HEYY DOCTREE 👩‍⚕️✨
+                &gt; HEYY RAKSHITA ✨
             </div>
 
             <div class="status-line">
@@ -320,14 +316,11 @@
                 <span>READY ✨</span>
             </div>
 
-            <button class="pulse-btn"
-                onclick="engageGrandReveal()">
+            <button class="pulse-btn" onclick="engageGrandReveal()">
                 CLICK TO OPEN 🎈
             </button>
 
         </div>
-
-        <!-- MAIN UI -->
 
         <div id="main-ui">
 
@@ -339,8 +332,6 @@
                 Happy Birthday,
                 <span>Rakshita!</span>
             </h1>
-
-            <!-- PHOTOS -->
 
             <div class="photo-deck">
 
@@ -362,16 +353,13 @@
 
             </div>
 
-            <!-- MESSAGE -->
-
             <div class="message-card">
 
                 <div class="rx-title">
                     FOR RAKSHITA • HAPPY BIRTHDAY 🎈
                 </div>
 
-                <p class="typed-message"
-                    id="msg-text"></p>
+                <p class="typed-message" id="msg-text"></p>
 
             </div>
 
@@ -379,10 +367,7 @@
 
     </div>
 
-    <!-- MUSIC BAR -->
-
-    <div class="music-bar"
-        id="audio-widget">
+    <div class="music-bar" id="audio-widget">
 
         <div class="sound-wave">
             <span></span>
@@ -419,97 +404,62 @@ Happy Birthday, Rakshita! 🎉
 
         function engageGrandReveal() {
 
-            const loader =
-                document.getElementById('loader-screen');
+            const loader = document.getElementById('loader-screen');
+            const mainContent = document.getElementById('main-ui');
+            const audioTrack = document.getElementById('bday-track');
+            const audioWidget = document.getElementById('audio-widget');
 
-            const mainContent =
-                document.getElementById('main-ui');
+            // Force play initialization block
+            audioTrack.muted = false;
+            var playPromise = audioTrack.play();
 
-            const audioTrack =
-                document.getElementById('bday-track');
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    audioWidget.style.display = 'flex';
+                }).catch(error => {
+                    console.log("Playback engine tracking failure: ", error);
+                });
+            }
 
-            const audioWidget =
-                document.getElementById('audio-widget');
-
-            audioTrack.play();
-
-            audioWidget.style.display = 'flex';
-
-            loader.style.transform =
-                'scale(0.8) translateY(-80px)';
-
+            loader.style.transform = 'scale(0.8) translateY(-80px)';
             loader.style.opacity = '0';
 
             setTimeout(() => {
-
                 loader.style.display = 'none';
-
                 mainContent.style.display = 'block';
 
                 setTimeout(() => {
-
                     mainContent.style.opacity = '1';
-
-                    typeWriter(
-                        friendshipMessage,
-                        'msg-text',
-                        28
-                    );
-
+                    typeWriter(friendshipMessage, 'msg-text', 28);
                     launchPremiumDecorations();
-
                 }, 100);
 
             }, 800);
         }
 
         let charIndex = 0;
-
         function typeWriter(text, elementId, speed) {
-
             if (charIndex < text.length) {
-
-                document.getElementById(elementId)
-                    .innerHTML += text.charAt(charIndex);
-
+                document.getElementById(elementId).innerHTML += text.charAt(charIndex);
                 charIndex++;
-
                 setTimeout(() => {
-
                     typeWriter(text, elementId, speed);
-
                 }, speed);
             }
         }
 
         function launchPremiumDecorations() {
-
-            const items =
-                ['🎈', '✨', '🎉', '💖', '⭐'];
+            const items = ['🎈', '✨', '🎉', '💖', '⭐'];
 
             setInterval(() => {
-
-                const element =
-                    document.createElement('div');
-
+                const element = document.createElement('div');
                 element.classList.add('particle');
+                element.innerText = items[Math.floor(Math.random() * items.length)];
 
-                element.innerText =
-                    items[Math.floor(Math.random() * items.length)];
-
-                element.style.left =
-                    Math.random() * 100 + 'vw';
-
-                element.style.fontSize =
-                    Math.random() * 2 + 1 + 'rem';
-
-                element.style.animationDuration =
-                    Math.random() * 4 + 4 + 's';
-
-                element.style.setProperty(
-                    '--drift',
-                    (Math.random() * 200 - 100) + 'px'
-                );
+                element.style.left = Math.random() * 100 + 'vw';
+                element.style.fontSize = Math.random() * 2 + 1 + 'rem';
+                element.style.animationDuration = Math.random() * 4 + 4 + 's';
+                element.style.setProperty('--drift', (Math.random() * 200 - 100) + 'px');
 
                 document.body.appendChild(element);
 
