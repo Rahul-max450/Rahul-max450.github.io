@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday Rakshita! ✨🎈</title>
+
     <style>
         :root {
             --bg-dark: #0a0a0c;
@@ -32,10 +33,12 @@
             perspective: 1000px;
         }
 
-        /* Luxury Ambient Glow Layers */
         .stars-grid {
             position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
             background: radial-gradient(circle, rgba(255, 0, 127, 0.03) 0%, transparent 80%);
             z-index: 0;
             pointer-events: none;
@@ -46,7 +49,8 @@
             width: 600px;
             height: 600px;
             background: radial-gradient(circle, rgba(0, 240, 255, 0.06) 0%, transparent 70%);
-            top: 50%; left: 50%;
+            top: 50%;
+            left: 50%;
             transform: translate(-50%, -50%);
             z-index: 0;
             pointer-events: none;
@@ -61,7 +65,6 @@
             text-align: center;
         }
 
-        /* SCREEN 1: Interactive System Unlock */
         #loader-screen {
             text-align: left;
             max-width: 500px;
@@ -82,7 +85,10 @@
             font-size: 0.95rem;
             color: #a0aec0;
         }
-        .status-line span { color: var(--electric-blue); }
+
+        .status-line span {
+            color: var(--electric-blue);
+        }
 
         .pulse-btn {
             background: linear-gradient(135deg, transparent, rgba(255, 0, 127, 0.1));
@@ -100,6 +106,7 @@
             transition: all 0.4s ease;
             box-shadow: 0 0 15px rgba(214, 175, 55, 0.2);
         }
+
         .pulse-btn:hover {
             background: var(--premium-gold);
             color: var(--bg-dark);
@@ -107,7 +114,6 @@
             transform: scale(1.02);
         }
 
-        /* SCREEN 2: Main Celebration Display */
         #main-ui {
             display: none;
             opacity: 0;
@@ -140,12 +146,12 @@
             letter-spacing: -1px;
             line-height: 1.1;
         }
+
         h1.main-title span {
             color: var(--neon-pink);
             text-shadow: 0 0 25px rgba(255, 0, 127, 0.5);
         }
 
-        /* Premium Floating Photo Grid */
         .photo-deck {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -162,7 +168,7 @@
             backdrop-filter: blur(8px);
             box-shadow: 0 20px 45px rgba(0,0,0,0.5);
             transform: rotate(var(--r));
-            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: all 0.6s ease;
             aspect-ratio: 3/4;
         }
 
@@ -171,13 +177,13 @@
             height: 100%;
             object-fit: cover;
             border-radius: 14px;
-            transition: all 0.5s ease;
         }
 
         .luxury-frame::before {
-            content: '✨ MEMORY_CAP_0' var(--id);
+            content: '✨ MEMORY';
             position: absolute;
-            bottom: 22px; left: 24px;
+            bottom: 22px;
+            left: 24px;
             font-family: monospace;
             font-size: 0.7rem;
             color: var(--electric-blue);
@@ -186,13 +192,12 @@
         }
 
         .luxury-frame:hover {
-            transform: scale(1.1) rotate(0deg) translateY(-15px);
+            transform: scale(1.08) rotate(0deg) translateY(-10px);
             border-color: var(--neon-pink);
             box-shadow: 0 30px 60px rgba(255, 0, 127, 0.25);
             z-index: 10;
         }
 
-        /* Best Friend Premium Letter Box */
         .message-card {
             background: linear-gradient(135deg, rgba(20, 20, 25, 0.8), rgba(10, 10, 12, 0.95));
             border: 1px solid rgba(255, 0, 127, 0.2);
@@ -215,14 +220,13 @@
         }
 
         .typed-message {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             line-height: 1.9;
             color: #cbd5e1;
             white-space: pre-line;
             min-height: 150px;
         }
 
-        /* Floating Balloon and Sparkle Physics Elements */
         .particle {
             position: fixed;
             pointer-events: none;
@@ -232,26 +236,44 @@
         }
 
         @keyframes floatUp {
-            0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.8; }
-            90% { opacity: 0.8; }
-            100% { transform: translateY(-115vh) translateX(var(--drift)) rotate(var(--rot)); opacity: 0; }
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.8;
+            }
+
+            90% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(-115vh) translateX(var(--drift)) rotate(var(--rot));
+                opacity: 0;
+            }
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
         }
 
-        /* Music Bar Control Widget */
         .music-bar {
             position: fixed;
-            bottom: 20px; right: 20px;
+            bottom: 20px;
+            right: 20px;
             background: rgba(20, 20, 25, 0.8);
             border: 1px solid var(--neon-pink);
             padding: 10px 18px;
             border-radius: 30px;
-            display: flex;
+            display: none;
             align-items: center;
             gap: 10px;
             font-size: 0.8rem;
@@ -259,27 +281,56 @@
             text-transform: uppercase;
             box-shadow: 0 10px 25px rgba(255,0,127,0.15);
             z-index: 1000;
-            display: none;
         }
 
         .sound-wave {
-            display: flex; gap: 3px; align-items: flex-end; height: 14px;
+            display: flex;
+            gap: 3px;
+            align-items: flex-end;
+            height: 14px;
         }
+
         .sound-wave span {
-            width: 2px; height: 100%; background: var(--neon-pink);
+            width: 2px;
+            height: 100%;
+            background: var(--neon-pink);
             animation: jump 0.8s ease-in-out infinite alternate;
         }
-        .sound-wave span:nth-child(2) { animation-delay: 0.2s; }
-        .sound-wave span:nth-child(3) { animation-delay: 0.4s; }
-        @keyframes jump { 0% { height: 2px; } 100% { height: 14px; } }
+
+        .sound-wave span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .sound-wave span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes jump {
+            0% {
+                height: 2px;
+            }
+
+            100% {
+                height: 14px;
+            }
+        }
 
         @media (max-width: 600px) {
-            h1.main-title { font-size: 2.5rem; }
-            .message-card { padding: 25px; }
-            .luxury-frame { transform: rotate(0deg) !important; }
+            h1.main-title {
+                font-size: 2.5rem;
+            }
+
+            .message-card {
+                padding: 25px;
+            }
+
+            .luxury-frame {
+                transform: rotate(0deg) !important;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <audio id="bday-track" loop>
@@ -290,126 +341,166 @@
     <div class="ambient-glow"></div>
 
     <div class="container">
-        
+
         <div id="loader-screen">
-            <div class="status-line">&gt; INTERFACE_CREATIVITY.SH... [RUNNING]</div>
-            <div class="status-line">&gt; CONFIGURING DESIGN ASSETS FOR: <span>RAKSHITA</span></div>
-            <div class="status-line">&gt; CORE RELATIONSHIP STATUS: <span>BEST FRIEND</span></div>
-            <div class="status-line">&gt; COMPILING PREMIUM AUDIO GRAPHICS... <span>READY</span></div>
-            
+            <div class="status-line">&gt; PREPARING BIRTHDAY SURPRISE...</div>
+            <div class="status-line">&gt; LOADING MEMORIES FOR: <span>RAKSHITA</span></div>
+            <div class="status-line">&gt; STATUS: <span>READY ✨</span></div>
+
             <button class="pulse-btn" onclick="engageGrandReveal()">Open Surprise</button>
         </div>
 
         <div id="main-ui">
+
             <div class="header-panel">
                 <div class="title-badge">✨ Made Especially For You ✨</div>
-                <h1 class="main-title">Happy Birthday, <span>Rakshita!</span></h1>
+                <h1 class="main-title">
+                    Happy Birthday,
+                    <span>Rakshita!</span>
+                </h1>
             </div>
 
             <div class="photo-deck">
-                <div class="luxury-frame" style="--r: -4deg; --id: 1;">
-                    <img src="pic1.jpg" alt="Rakshita 1" onerror="this.style.display='none'; this.parentElement.innerHTML='📸 Memory 01'">
+
+                <div class="luxury-frame" style="--r:-4deg;">
+                    <img src="pic1.jpg" alt="pic1">
                 </div>
-                <div class="luxury-frame" style="--r: 2deg; --id: 2;">
-                    <img src="pic2.jpg" alt="Rakshita 2" onerror="this.style.display='none'; this.parentElement.innerHTML='✨ Memory 02'">
+
+                <div class="luxury-frame" style="--r:2deg;">
+                    <img src="pic2.jpg" alt="pic2">
                 </div>
-                <div class="luxury-frame" style="--r: -2deg; --id: 3;">
-                    <img src="pic3.jpg" alt="Rakshita 3" onerror="this.style.display='none'; this.parentElement.innerHTML='🎈 Memory 03'">
+
+                <div class="luxury-frame" style="--r:-2deg;">
+                    <img src="pic3.jpg" alt="pic3">
                 </div>
-                <div class="luxury-frame" style="--r: 5deg; --id: 4;">
-                    <img src="pic4.jpg" alt="Rakshita 4" onerror="this.style.display='none'; this.parentElement.innerHTML='🎉 Memory 04'">
+
+                <div class="luxury-frame" style="--r:5deg;">
+                    <img src="pic4.jpg" alt="pic4">
                 </div>
+
             </div>
 
             <div class="message-card">
-                <div class="rx-title">CHAPTER 2026 // FROM YOUR BEST FRIEND</div>
+                <div class="rx-title">
+                    FOR RAKSHITA • HAPPY BIRTHDAY 🎈
+                </div>
+
                 <p class="typed-message" id="msg-text"></p>
             </div>
+
         </div>
+
     </div>
 
     <div class="music-bar" id="audio-widget">
-        <div class="sound-wave"><span></span><span></span><span></span></div>
-        <div>BGM: Custom Track Active</div>
+        <div class="sound-wave">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div>BGM ACTIVE</div>
     </div>
 
     <script>
-        const friendshipMessage = `To my absolute favorite human in the entire world, Rakshita,
 
-Happy Birthday! 🎉🎈
+        const friendshipMessage = `Happy Birthday, Rakshita! ✨🎂
 
-From all the endless laughs to sharing the most random, chaotic conversations, you have been the absolute best friend someone could ever ask for. 
+Wishing you a really beautiful day filled with happiness, smiles, peace, and lots of good memories. 🎈
 
-I built this little digital space entirely from scratch just to celebrate you. Thank you for always being exactly who you are, keeping my secrets safe, and matching my energy perfectly.
+Even though we don’t talk every day, I’m genuinely happy that we met during our 11th class days. Some people may not stay in daily conversations, but they still remain special in a different way.
 
-I hope your special day is packed with infinite happiness, lots of tasty cake, and beautiful moments. Here's to surviving another year together and making a million more core memories! ✨🎂
+I hope this new year of your life brings success, positivity, confidence, and everything you truly deserve. May all your dreams slowly turn into reality and may life always give you reasons to smile.
 
-- Your Software Bestie`;
+Keep smiling and enjoy your special day to the fullest.
+
+Once again,
+Happy Birthday, Rakshita! 🎉
+
+— RK 🙂`;
 
         function engageGrandReveal() {
+
             const loader = document.getElementById('loader-screen');
             const mainContent = document.getElementById('main-ui');
             const audioTrack = document.getElementById('bday-track');
             const audioWidget = document.getElementById('audio-widget');
-            
-            // Instantly plays the uploaded track on touch interaction
-            audioTrack.play().catch(err => console.log("Audio trigger processed: ", err));
+
+            audioTrack.play().catch(err => console.log(err));
+
             audioWidget.style.display = 'flex';
 
-            // Animation out
             loader.style.transform = 'scale(0.8) translateY(-100px)';
             loader.style.opacity = '0';
-            
+
             setTimeout(() => {
+
                 loader.style.display = 'none';
                 mainContent.style.display = 'block';
-                
+
                 setTimeout(() => {
+
                     mainContent.style.opacity = '1';
+
                     typeWriter(friendshipMessage, 'msg-text', 28);
+
                     launchPremiumDecorations();
+
                 }, 100);
+
             }, 800);
         }
 
-        // Clean typing core
         let charIndex = 0;
+
         function typeWriter(text, elementId, speed) {
+
             if (charIndex < text.length) {
+
                 document.getElementById(elementId).innerHTML += text.charAt(charIndex);
+
                 charIndex++;
+
                 setTimeout(() => typeWriter(text, elementId, speed), speed);
             }
         }
 
-        // Celebratory Party decoration generator (Balloons, Sparkles, Confetti)
         function launchPremiumDecorations() {
-            const items = ['🎈', '✨', '🎉', '🎈', '💖', '⭐'];
-            const colors = ['#ff007f', '#d4af37', '#00f0ff', '#ffffff'];
-            
+
+            const items = ['🎈', '✨', '🎉', '💖', '⭐'];
+
             setInterval(() => {
+
                 if (document.hidden) return;
-                
+
                 const element = document.createElement('div');
+
                 element.classList.add('particle');
-                
-                const chosen = items[Math.floor(Math.random() * items.length)];
-                element.innerText = chosen;
-                
+
+                element.innerText = items[Math.floor(Math.random() * items.length)];
+
                 element.style.left = Math.random() * 95 + 'vw';
+
                 element.style.fontSize = Math.random() * 2 + 1 + 'rem';
+
                 element.style.animationDuration = Math.random() * 5 + 4 + 's';
+
                 element.style.setProperty('--drift', (Math.random() * 200 - 100) + 'px');
+
                 element.style.setProperty('--rot', (Math.random() * 360) + 'deg');
-                
-                if (chosen === '✨' || chosen === '⭐') {
-                    element.style.textShadow = `0 0 10px ${colors[Math.floor(Math.random() * colors.length)]}`;
-                }
-                
+
                 document.body.appendChild(element);
-                setTimeout(() => { element.remove(); }, 8000);
+
+                setTimeout(() => {
+
+                    element.remove();
+
+                }, 8000);
+
             }, 250);
         }
+
     </script>
+
 </body>
 </html>
