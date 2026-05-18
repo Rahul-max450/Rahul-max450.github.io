@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Rakshita! ✨🎈</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Happy Birthday Rakshita ✨</title>
 
     <style>
         :root {
@@ -16,74 +18,69 @@
         }
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            min-height: 100vh;
+            background: var(--bg-dark);
+            color: white;
             overflow-x: hidden;
+            min-height: 100vh;
             display: flex;
-            align-items: center;
             justify-content: center;
-            perspective: 1000px;
+            align-items: center;
         }
 
         .stars-grid {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: radial-gradient(circle, rgba(255, 0, 127, 0.03) 0%, transparent 80%);
+            inset: 0;
+            background:
+                radial-gradient(circle at top, rgba(255, 0, 127, 0.08), transparent 50%);
             z-index: 0;
-            pointer-events: none;
         }
 
         .ambient-glow {
             position: fixed;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(0, 240, 255, 0.06) 0%, transparent 70%);
+            background: radial-gradient(circle,
+                    rgba(0, 240, 255, 0.08),
+                    transparent 70%);
+            filter: blur(80px);
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 0;
-            pointer-events: none;
-            filter: blur(60px);
         }
 
         .container {
             width: 90%;
             max-width: 1000px;
             z-index: 2;
-            padding: 40px 0;
             text-align: center;
         }
 
         #loader-screen {
-            text-align: left;
-            max-width: 500px;
-            width: 100%;
-            margin: 0 auto;
             background: rgba(15, 15, 20, 0.9);
-            padding: 35px;
             border: 1px solid var(--neon-pink);
-            border-radius: 16px;
+            border-radius: 22px;
+            padding: 40px;
+            max-width: 600px;
+            margin: auto;
             box-shadow: 0 0 40px rgba(255, 0, 127, 0.25);
-            backdrop-filter: blur(15px);
-            font-family: 'Courier New', Courier, monospace;
-            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            text-align: left;
+            backdrop-filter: blur(14px);
+            transition: 0.8s;
         }
 
         .status-line {
-            margin-bottom: 14px;
-            font-size: 0.95rem;
-            color: #a0aec0;
+            margin-bottom: 18px;
+            font-size: 1rem;
+            color: #d1d5db;
+            letter-spacing: 1px;
         }
 
         .status-line span {
@@ -91,241 +88,195 @@
         }
 
         .pulse-btn {
-            background: linear-gradient(135deg, transparent, rgba(255, 0, 127, 0.1));
+            margin-top: 30px;
+            width: 100%;
+            padding: 18px;
             border: 2px solid var(--premium-gold);
+            background: transparent;
             color: var(--premium-gold);
-            padding: 16px 30px;
             font-size: 1.1rem;
             font-weight: bold;
+            letter-spacing: 4px;
+            border-radius: 12px;
             cursor: pointer;
-            margin-top: 25px;
-            width: 100%;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            border-radius: 8px;
-            transition: all 0.4s ease;
-            box-shadow: 0 0 15px rgba(214, 175, 55, 0.2);
+            transition: 0.4s;
         }
 
         .pulse-btn:hover {
             background: var(--premium-gold);
-            color: var(--bg-dark);
+            color: black;
             box-shadow: 0 0 25px var(--premium-gold);
-            transform: scale(1.02);
         }
 
         #main-ui {
             display: none;
             opacity: 0;
-            transition: opacity 2s ease-in-out;
-        }
-
-        .header-panel {
-            margin-bottom: 40px;
+            transition: 2s;
         }
 
         .title-badge {
             display: inline-block;
-            border: 1px solid rgba(212, 175, 55, 0.4);
-            padding: 8px 20px;
+            padding: 10px 22px;
             border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 600;
+            border: 1px solid rgba(212, 175, 55, 0.3);
             color: var(--premium-gold);
-            letter-spacing: 4px;
+            margin-bottom: 25px;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            background: rgba(214, 175, 55, 0.07);
-            margin-bottom: 20px;
-            animation: float 4s ease-in-out infinite;
+            background: rgba(212, 175, 55, 0.08);
         }
 
-        h1.main-title {
+        h1 {
             font-size: 4rem;
             font-weight: 900;
-            color: #ffffff;
-            letter-spacing: -1px;
-            line-height: 1.1;
+            margin-bottom: 40px;
         }
 
-        h1.main-title span {
+        h1 span {
             color: var(--neon-pink);
-            text-shadow: 0 0 25px rgba(255, 0, 127, 0.5);
+            text-shadow: 0 0 20px rgba(255, 0, 127, 0.5);
         }
 
         .photo-deck {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 25px;
-            margin: 50px 0;
+            margin-bottom: 50px;
         }
 
         .luxury-frame {
-            position: relative;
             background: var(--card-rgba);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 20px;
             padding: 14px;
-            backdrop-filter: blur(8px);
-            box-shadow: 0 20px 45px rgba(0,0,0,0.5);
-            transform: rotate(var(--r));
-            transition: all 0.6s ease;
-            aspect-ratio: 3/4;
+            border-radius: 22px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: 0.5s;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .luxury-frame:hover {
+            transform: translateY(-10px) scale(1.04);
+            border-color: var(--neon-pink);
+            box-shadow: 0 20px 50px rgba(255, 0, 127, 0.25);
         }
 
         .luxury-frame img {
             width: 100%;
-            height: 100%;
+            height: 320px;
             object-fit: cover;
-            border-radius: 14px;
-        }
-
-        .luxury-frame::before {
-            content: '✨ MEMORY';
-            position: absolute;
-            bottom: 22px;
-            left: 24px;
-            font-family: monospace;
-            font-size: 0.7rem;
-            color: var(--electric-blue);
-            text-shadow: 0 0 5px var(--electric-blue);
-            z-index: 5;
-        }
-
-        .luxury-frame:hover {
-            transform: scale(1.08) rotate(0deg) translateY(-10px);
-            border-color: var(--neon-pink);
-            box-shadow: 0 30px 60px rgba(255, 0, 127, 0.25);
-            z-index: 10;
+            border-radius: 16px;
         }
 
         .message-card {
-            background: linear-gradient(135deg, rgba(20, 20, 25, 0.8), rgba(10, 10, 12, 0.95));
-            border: 1px solid rgba(255, 0, 127, 0.2);
-            border-radius: 28px;
+            background: linear-gradient(135deg,
+                    rgba(20, 20, 25, 0.9),
+                    rgba(10, 10, 12, 0.95));
+            border-radius: 30px;
             padding: 45px;
             text-align: left;
-            position: relative;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+            border: 1px solid rgba(255, 0, 127, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
         }
 
         .rx-title {
-            font-family: monospace;
             color: var(--premium-gold);
             font-size: 0.85rem;
             letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-            border-bottom: 1px dashed rgba(255,255,255,0.15);
+            margin-bottom: 25px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
             padding-bottom: 12px;
+            text-transform: uppercase;
         }
 
         .typed-message {
             font-size: 1.1rem;
-            line-height: 1.9;
-            color: #cbd5e1;
+            line-height: 2;
+            color: #d1d5db;
             white-space: pre-line;
-            min-height: 150px;
-        }
-
-        .particle {
-            position: fixed;
-            pointer-events: none;
-            z-index: 999;
-            bottom: -100px;
-            animation: floatUp linear forwards;
-        }
-
-        @keyframes floatUp {
-            0% {
-                transform: translateY(0) translateX(0) rotate(0deg);
-                opacity: 0;
-            }
-
-            10% {
-                opacity: 0.8;
-            }
-
-            90% {
-                opacity: 0.8;
-            }
-
-            100% {
-                transform: translateY(-115vh) translateX(var(--drift)) rotate(var(--rot));
-                opacity: 0;
-            }
-        }
-
-        @keyframes float {
-            0%,100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-8px);
-            }
         }
 
         .music-bar {
             position: fixed;
-            bottom: 20px;
             right: 20px;
-            background: rgba(20, 20, 25, 0.8);
+            bottom: 20px;
+            background: rgba(20, 20, 25, 0.9);
             border: 1px solid var(--neon-pink);
-            padding: 10px 18px;
+            padding: 12px 18px;
             border-radius: 30px;
             display: none;
             align-items: center;
             gap: 10px;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            box-shadow: 0 10px 25px rgba(255,0,127,0.15);
-            z-index: 1000;
+            z-index: 999;
         }
 
         .sound-wave {
             display: flex;
             gap: 3px;
-            align-items: flex-end;
+            align-items: end;
             height: 14px;
         }
 
         .sound-wave span {
             width: 2px;
-            height: 100%;
             background: var(--neon-pink);
-            animation: jump 0.8s ease-in-out infinite alternate;
+            animation: jump 0.8s infinite alternate;
+        }
+
+        .sound-wave span:nth-child(1) {
+            height: 5px;
         }
 
         .sound-wave span:nth-child(2) {
-            animation-delay: 0.2s;
+            height: 10px;
         }
 
         .sound-wave span:nth-child(3) {
-            animation-delay: 0.4s;
+            height: 14px;
         }
 
         @keyframes jump {
-            0% {
-                height: 2px;
+            from {
+                transform: scaleY(0.5);
             }
 
-            100% {
-                height: 14px;
+            to {
+                transform: scaleY(1.2);
             }
         }
 
-        @media (max-width: 600px) {
-            h1.main-title {
+        .particle {
+            position: fixed;
+            bottom: -50px;
+            pointer-events: none;
+            animation: floatUp linear forwards;
+            z-index: 999;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-110vh) translateX(var(--drift));
+                opacity: 0;
+            }
+        }
+
+        @media(max-width:600px) {
+            h1 {
                 font-size: 2.5rem;
             }
 
             .message-card {
-                padding: 25px;
-            }
-
-            .luxury-frame {
-                transform: rotate(0deg) !important;
+                padding: 28px;
             }
         }
     </style>
@@ -342,57 +293,92 @@
 
     <div class="container">
 
-        <div id="loader-screen">
-            <div class="status-line">&gt; PREPARING BIRTHDAY SURPRISE...</div>
-            <div class="status-line">&gt; LOADING MEMORIES FOR: <span>RAKSHITA</span></div>
-            <div class="status-line">&gt; STATUS: <span>READY ✨</span></div>
+        <!-- LOADER SCREEN -->
 
-            <button class="pulse-btn" onclick="engageGrandReveal()">Open Surprise</button>
+        <div id="loader-screen">
+
+            <div class="status-line">
+                &gt; HEYY DOCTREE 👩‍⚕️✨
+            </div>
+
+            <div class="status-line">
+                &gt; ARE YOU READY TO SEE A SMALL SURPRISE MESSAGE?
+            </div>
+
+            <div class="status-line">
+                &gt; SPECIAL MESSAGE FROM:
+                <span>RahulKumar🙂</span>
+            </div>
+
+            <div class="status-line">
+                &gt; STATUS:
+                <span>READY ✨</span>
+            </div>
+
+            <button class="pulse-btn"
+                onclick="engageGrandReveal()">
+                CLICK TO OPEN 🎈
+            </button>
+
         </div>
+
+        <!-- MAIN UI -->
 
         <div id="main-ui">
 
-            <div class="header-panel">
-                <div class="title-badge">✨ Made Especially For You ✨</div>
-                <h1 class="main-title">
-                    Happy Birthday,
-                    <span>Rakshita!</span>
-                </h1>
+            <div class="title-badge">
+                ✨ Made Especially For You ✨
             </div>
+
+            <h1>
+                Happy Birthday,
+                <span>Rakshita!</span>
+            </h1>
+
+            <!-- PHOTOS -->
 
             <div class="photo-deck">
 
-                <div class="luxury-frame" style="--r:-4deg;">
-                    <img src="pic1.jpg" alt="pic1">
+                <div class="luxury-frame">
+                    <img src="pic1.jpg">
                 </div>
 
-                <div class="luxury-frame" style="--r:2deg;">
-                    <img src="pic2.jpg" alt="pic2">
+                <div class="luxury-frame">
+                    <img src="pic2.jpg">
                 </div>
 
-                <div class="luxury-frame" style="--r:-2deg;">
-                    <img src="pic3.jpg" alt="pic3">
+                <div class="luxury-frame">
+                    <img src="pic3.jpg">
                 </div>
 
-                <div class="luxury-frame" style="--r:5deg;">
-                    <img src="pic4.jpg" alt="pic4">
+                <div class="luxury-frame">
+                    <img src="pic4.jpg">
                 </div>
 
             </div>
 
+            <!-- MESSAGE -->
+
             <div class="message-card">
+
                 <div class="rx-title">
                     FOR RAKSHITA • HAPPY BIRTHDAY 🎈
                 </div>
 
-                <p class="typed-message" id="msg-text"></p>
+                <p class="typed-message"
+                    id="msg-text"></p>
+
             </div>
 
         </div>
 
     </div>
 
-    <div class="music-bar" id="audio-widget">
+    <!-- MUSIC BAR -->
+
+    <div class="music-bar"
+        id="audio-widget">
+
         <div class="sound-wave">
             <span></span>
             <span></span>
@@ -400,17 +386,24 @@
         </div>
 
         <div>BGM ACTIVE</div>
+
     </div>
 
     <script>
 
-        const friendshipMessage = `Happy Birthday, Rakshita! ✨🎂
+        const friendshipMessage =
+            `Happy Birthday, Rakshita! ✨🎂
 
 Wishing you a really beautiful day filled with happiness, smiles, peace, and lots of good memories. 🎈
 
 Even though we don’t talk every day, I’m genuinely happy that we met during our 11th class days. Some people may not stay in daily conversations, but they still remain special in a different way.
 
 I hope this new year of your life brings success, positivity, confidence, and everything you truly deserve. May all your dreams slowly turn into reality and may life always give you reasons to smile.
+
+And honestly...
+
+Maybe I’m not that special in your story,
+but in my story, you’ll always be special. ✨
 
 Keep smiling and enjoy your special day to the fullest.
 
@@ -421,28 +414,42 @@ Happy Birthday, Rakshita! 🎉
 
         function engageGrandReveal() {
 
-            const loader = document.getElementById('loader-screen');
-            const mainContent = document.getElementById('main-ui');
-            const audioTrack = document.getElementById('bday-track');
-            const audioWidget = document.getElementById('audio-widget');
+            const loader =
+                document.getElementById('loader-screen');
 
-            audioTrack.play().catch(err => console.log(err));
+            const mainContent =
+                document.getElementById('main-ui');
+
+            const audioTrack =
+                document.getElementById('bday-track');
+
+            const audioWidget =
+                document.getElementById('audio-widget');
+
+            audioTrack.play();
 
             audioWidget.style.display = 'flex';
 
-            loader.style.transform = 'scale(0.8) translateY(-100px)';
+            loader.style.transform =
+                'scale(0.8) translateY(-80px)';
+
             loader.style.opacity = '0';
 
             setTimeout(() => {
 
                 loader.style.display = 'none';
+
                 mainContent.style.display = 'block';
 
                 setTimeout(() => {
 
                     mainContent.style.opacity = '1';
 
-                    typeWriter(friendshipMessage, 'msg-text', 28);
+                    typeWriter(
+                        friendshipMessage,
+                        'msg-text',
+                        28
+                    );
 
                     launchPremiumDecorations();
 
@@ -457,44 +464,52 @@ Happy Birthday, Rakshita! 🎉
 
             if (charIndex < text.length) {
 
-                document.getElementById(elementId).innerHTML += text.charAt(charIndex);
+                document.getElementById(elementId)
+                    .innerHTML += text.charAt(charIndex);
 
                 charIndex++;
 
-                setTimeout(() => typeWriter(text, elementId, speed), speed);
+                setTimeout(() => {
+
+                    typeWriter(text, elementId, speed);
+
+                }, speed);
             }
         }
 
         function launchPremiumDecorations() {
 
-            const items = ['🎈', '✨', '🎉', '💖', '⭐'];
+            const items =
+                ['🎈', '✨', '🎉', '💖', '⭐'];
 
             setInterval(() => {
 
-                if (document.hidden) return;
-
-                const element = document.createElement('div');
+                const element =
+                    document.createElement('div');
 
                 element.classList.add('particle');
 
-                element.innerText = items[Math.floor(Math.random() * items.length)];
+                element.innerText =
+                    items[Math.floor(Math.random() * items.length)];
 
-                element.style.left = Math.random() * 95 + 'vw';
+                element.style.left =
+                    Math.random() * 100 + 'vw';
 
-                element.style.fontSize = Math.random() * 2 + 1 + 'rem';
+                element.style.fontSize =
+                    Math.random() * 2 + 1 + 'rem';
 
-                element.style.animationDuration = Math.random() * 5 + 4 + 's';
+                element.style.animationDuration =
+                    Math.random() * 4 + 4 + 's';
 
-                element.style.setProperty('--drift', (Math.random() * 200 - 100) + 'px');
-
-                element.style.setProperty('--rot', (Math.random() * 360) + 'deg');
+                element.style.setProperty(
+                    '--drift',
+                    (Math.random() * 200 - 100) + 'px'
+                );
 
                 document.body.appendChild(element);
 
                 setTimeout(() => {
-
                     element.remove();
-
                 }, 8000);
 
             }, 250);
@@ -503,4 +518,5 @@ Happy Birthday, Rakshita! 🎉
     </script>
 
 </body>
+
 </html>
